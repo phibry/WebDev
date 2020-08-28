@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Box Model / Margin & Padding</title>
+  <style>
+    /* CSS Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .box {
+      background: #f4f4f4;
+      border: 2px solid #777;
+      width: 500px;
+
+      /* Padding on all sides */
+      padding: 20px;
+
+      /* Padding per side 
+      Overwrites the padding argument for all sides above*/
+      padding-top: 10px;
+      padding-right: 15px;
+      padding-bottom: 10px;
+      padding-left: 15px;
+
+      /* Padding shorthand */
+      /* Top, Right, Bottom, Left */
+      padding: 10px 15px 10px 15px;
+
+      /* Padding shorthand */
+      /* Top/Bottom, Left/Right */
+      padding: 10px 15px;
+
+      /* Margin on all sides */
+      margin: 20px;
+
+            /* margin per side 
+      Overwrites the margin argument for all sides above*/
+      margin-top: 10px;
+      margin-right: 15px;
+      margin-bottom: 10px;
+      margin-left: 15px;
+
+      /* margin shorthand */
+      /* Top, Right, Bottom, Left */
+      margin: 10px 15px 10px 15px;
+
+      /* margin shorthand */
+      /* Top/Bottom, Left/Right */
+      margin: 10px 15px;
+    }
+
+    .box h3 {
+      padding-bottom: 10px;
+    }
+
+    /* .box p {
+      margin: 0;
+    } */
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h3>Box One</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet debitis mollitia recusandae, esse enim laborum consequatur quo, obcaecati vero nam nobis nostrum earum reiciendis id sed officiis eos assumenda minima.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet debitis mollitia recusandae, esse enim laborum consequatur quo, obcaecati vero nam nobis nostrum earum reiciendis id sed officiis eos assumenda minima.</p>
+  </div>  
+  <div class="box">
+    <h3>Box Two</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet debitis mollitia recusandae, esse enim laborum consequatur quo, obcaecati vero nam nobis nostrum earum reiciendis id sed officiis eos assumenda minima.</p>
+  </div>  
+</body>
+</html>

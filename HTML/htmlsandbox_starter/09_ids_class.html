@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Div, span, id and class</title>
+
+  <style>
+    /* Styling for class="card" */
+    .card {
+      border: 1px solid #ccc;
+      background: #f4f4f4;
+      padding: 20px;
+      margin-bottom: 10px;
+    }
+
+    .enhance {
+      color: yellow;
+      background-color: black;
+    }
+  </style>
+
+</head>
+<body>
+  <div id="main-header">
+    <!-- Do not repeat id's -->
+    <h1>My Website</h1>
+    <p>A site about me</p>
+  </div>
+  <ul id="main-nav">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <div id="about" class="card">
+    <!-- sections with class card are equally styled -->
+    <h3>About</h3>
+    <p>Lorem ipsum dolor, sit amet <div class="enhance"> consectetur adipisicing elit. Nam perferendis et facilis eaque.</div> Commodi non illum exercitationem quae animi, <span class="enhance"> veritatis at saepe debitis, facere nesciunt accusamus eveniet qui </span> perspiciatis. Atque.
+    <!-- div = block level element: pushes the next thing down -->
+    <!-- Span = inline level -->
+    </p>
+  </div>
+
+  <div id="contact" class="card">
+    <h3>Contact Me</h3>
+    <ul>
+      <li>Adress: 50 Main st, Boston MA</li>
+      <li>Phone: (555) 555-5555</li>
+      <li>Email: me@smth.com</li>
+    </ul>
+  </div>
+  
+  <div id="footer">
+    <p>Copyright &copy; 2020</p>
+  </div>
+</body>
+</html>
