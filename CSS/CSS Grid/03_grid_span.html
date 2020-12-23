@@ -1,21 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grid Rows</title>
+  <title>Grid Span</title>
+
   <style>
     .grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-
-      /* set the first 3 rows */
-      grid-template-rows: 1fr 2fr 3fr;
-      
-      /* set the rest to 3 fr */
-      grid-auto-rows: 3fr;
-
-      grid-gap: 1rem;
+      grid-template-columns: repeat(4, 1fr);
     }
 
     .item {
@@ -27,9 +21,28 @@
       text-align: center;
     }
 
+    .item:first-child {
+      /* grid-column-start: 1;
+      grid-column-end: 4;
+      grid-row-start: 1;
+      grid-row-end: 3; */
+
+      /* Take Item 1, span it to three */
+      grid-column: 1 / span 3;
+
+      /* Span item 1 two times */
+      grid-row: 1 / span 2;
+    }
+
+    .item:nth-child(9) {
+      grid-column: 2 / span 3;
+      grid-row: 2 / span 3;
+    }
   </style>
 </head>
+
 <body>
+
   <div class="grid">
     <div class="item">Item 1</div>
     <div class="item">Item 2</div>
@@ -40,6 +53,12 @@
     <div class="item">Item 7</div>
     <div class="item">Item 8</div>
     <div class="item">Item 9</div>
+    <div class="item">Item 10</div>
+    <div class="item">Item 11</div>
+    <div class="item">Item 12</div>
+    <div class="item">Item 13</div>
+    <div class="item">Item 14</div>
+    <div class="item">Item 15</div>
   </div>
 
 </body>
