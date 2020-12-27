@@ -27,6 +27,7 @@
   width: 60px;
   height: 60px;
   padding: 1rem;
+  border-radius: 50%;
   background: var(--primary-color);
   display: flex;
   align-items: center;
@@ -45,7 +46,7 @@
   align-items: center;
   justify-content: center;
   /* For the spinning animation */
-  transition: all 0.4s ease;
+  transition: all 1s ease;
 }
 
 /* Hamburger Lines - Top & Bottom */
@@ -110,7 +111,7 @@
 
 .menu-wrap .toggler:checked ~ .menu > div > div {
   opacity: 1;
-  transition: opacity 0.3s ease 0.2s;
+  transition: opacity 0.7s ease 0.2s;
 }
 
 .menu-wrap .menu > div {
@@ -121,7 +122,7 @@
   align-items: center;
   justify-content: center;
   transform: scale(0);
-  transition: all 0.3s ease;
+  transition: all 0.7s ease;
   border-radius: 50%;
   flex: none;
 }
@@ -131,7 +132,7 @@
   max-width: 90vw;
   max-height: 100vh;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.7s ease;
 }
 
 .menu-wrap .menu > div > div > ul > li {
@@ -144,7 +145,7 @@
 .menu-wrap .menu > div > div > ul > li > a {
   text-decoration: none;
   color: inherit;
-  transition: color 0.3s ease;
+  transition: color 0.7s ease;
 }
 
 .menu-wrap .menu > div > div > ul > li > a:hover {

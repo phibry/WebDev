@@ -1,0 +1,19 @@
+// Functions needs a return, returns something
+// Set Text Color Functions
+@function set-text-color($color) {
+  @if(lightness($color) > 50) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
+
+
+
+// Mixin, basically a set of style which you want to onclude
+// Transform mixin
+@mixin transform($property) {
+  --webkit-transform: $property;
+  --ms-transform: $property;
+  transform: $property;
+}
