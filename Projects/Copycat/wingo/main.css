@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: #4E4E51;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1280px;
+  padding: 0 1.5rem;
+  margin: auto;
+  overflow: hidden;
+}
+
+#main-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem 0 1rem 0;
+  background: #fff;
+  font-weight: 500;
+}
+
+#main-nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#main-nav li {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+#main-nav .ul-1 {
+  margin-left: 15px;
+}
+
+#main-nav .ul-1 .logo {
+  position: relative;
+}
+
+#main-nav .ul-1 .logo a {
+  position: absolute;
+  -webkit-transition: -webkit-transform 750ms cubic-bezier(0.2, 1, 0.2, 1);
+  transition: -webkit-transform 750ms cubic-bezier(0.2, 1, 0.2, 1);
+  transition: transform 750ms cubic-bezier(0.2, 1, 0.2, 1);
+  transition: transform 750ms cubic-bezier(0.2, 1, 0.2, 1), -webkit-transform 750ms cubic-bezier(0.2, 1, 0.2, 1);
+}
+
+#main-nav .ul-1 .logo a:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+#main-nav .ul-1-minor {
+  margin-left: 150px;
+}
+
+#main-nav .ul-1-minor li a {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+#main-nav .ul-1-minor li a:hover {
+  color: #FF575B;
+  -webkit-transform: color;
+          transform: color;
+}
+
+#main-nav .ul-2 {
+  margin-right: 15px;
+}
+
+#main-nav .ul-2 li:last-child::after {
+  content: '';
+  display: block;
+  width: 13px;
+  height: 13px;
+  background: url("../wingo/img/chevron-down-solid.svg") no-repeat;
+  float: right;
+  margin: 4px 0 0 11px;
+}
+
+#main-nav .ul-2 li:nth-child(3) {
+  z-index: 1;
+  position: relative;
+}
+
+#main-nav .ul-2 li:nth-child(3):after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: #FFEDB7;
+  z-index: -1;
+  overflow: auto;
+}
+
+#main-nav .ul-2 li a {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+#main-nav .ul-2 li .fa-search {
+  -webkit-transition: all 0.7s;
+  transition: all 0.7s;
+}
+
+#main-nav .ul-2 li a:hover {
+  color: #FF575B;
+  -webkit-transform: color;
+          transform: color;
+}
+
+#main-nav .ul-2 li a:hover .fa-search {
+  -webkit-transform: color;
+          transform: color;
+}
+/*# sourceMappingURL=main.css.map */
