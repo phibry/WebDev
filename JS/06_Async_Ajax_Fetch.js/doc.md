@@ -82,7 +82,7 @@ Instead of a Common Request & Response (HTTP Requests -> loads the full page) we
 
 - Contract provided by one piece of software to another
 - Structured request and response
-- We just worked with an API that takes a request and respons with jokes
+- We just worked with an API that takes a request and response with jokes
 
 ### 4.1. Rest API
 
@@ -116,3 +116,30 @@ Minor Requests
 - POST   https://someurl.com/api/users // Add user
 - PUT   https://someurl.com/api/users/1 // Update user
 - DELETE   https://someurl.com/api/users/1 // Delete user
+
+## 5. async, await vs .then()
+
+```javascript
+// Using then
+doSomething(payload) {
+  const url = 'https://link-here/consultas';
+  return this.axios.get(url, {
+    params: {
+      token: payload.token,
+      chave: payload.chave,
+    },
+   }).then(resp => resp.data);
+}
+
+// Using Async / await
+async doSomething(payload) {
+   const url = 'https://link-here/consultas';
+   const resp = await this.axios.get(url, {
+   params: {
+     token: payload.token,
+     chave: payload.chave,
+    },
+ });
+ return resp.data;
+}
+```
