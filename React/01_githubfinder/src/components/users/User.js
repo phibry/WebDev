@@ -48,7 +48,7 @@ const User = ({ match }) => {
         <i className="fas fa-times-circle text-danger" />
       )}
       <div className="card grid-2">
-        <div className="all-center">
+        <div className="card-profile">
           <img
             src={avatar_url}
             className="round-img"
@@ -58,44 +58,26 @@ const User = ({ match }) => {
           <h1>{name}</h1>
           <p>Location: {location}</p>
         </div>
-        <div>
+        <div className="card-info">
           {bio && (
             <Fragment>
               <h3>Bio</h3>
               <p>{bio}</p>
             </Fragment>
           )}
-          <a href={html_url} className="btn btn-dark my-1">
+          <a href={html_url} className="btn btn-dark btn-margin">
             Visit Github Profile
           </a>
           <ul>
-            <li>
-              {login && (
-                <Fragment>
-                  <strong>Username: </strong> {login}
-                </Fragment>
-              )}
-            </li>
-            <li>
-              {company && (
-                <Fragment>
-                  <strong>Company: </strong> {company}
-                </Fragment>
-              )}
-            </li>
-            <li>
-              {blog && (
-                <Fragment>
-                  <strong>Website: </strong> {blog}
-                </Fragment>
-              )}
-            </li>
+            <li>{login && <Fragment>Username: {login}</Fragment>}</li>
+            <li>{company && <Fragment>Company: {company}</Fragment>}</li>
+            <li>{blog && <Fragment>Website: {blog}</Fragment>}</li>
           </ul>
         </div>
       </div>
-      <div className="card text-center">
+      <div className="card">
         <div className="badge badge-primary">Followers: {followers}</div>
-        <div className="badge badge-success">Following: {following}</div>
+        <div className="badge badge-secondary">Following: {following}</div>
         <div className="badge badge-light">Public Repos: {public_repos}</div>
         <div className="badge badge-dark">Public Gists: {public_gists}</div>
       </div>

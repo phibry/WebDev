@@ -15,7 +15,7 @@ const Users = () => {
     return <Spinner />;
   } else {
     return (
-      <div style={userStyle}>
+      <div className="users">
         {users.map((user) => (
           // we need key={user.id}
           // Each child of a list should have a unique "key" prop
@@ -27,13 +27,6 @@ const Users = () => {
       </div>
     );
   }
-};
-
-// CSS Styling
-const userStyle = {
-  display: 'grid',
-  gridTemplateColumns: 'repeat(3, 1fr)',
-  gridGap: '1rem',
 };
 
 export default Users;

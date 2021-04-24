@@ -9,10 +9,10 @@ const Navbar = ({ icon, title }) => {
         <i className={icon}></i> {title}
       </h1>
       <ul>
-        <li>
+        <li className="nav-link">
           <Link to="/">Home</Link>
         </li>
-        <li>
+        <li className="nav-link">
           <Link to="/about">About</Link>
         </li>
       </ul>

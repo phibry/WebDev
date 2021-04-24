@@ -42,7 +42,7 @@ We can use functional components instead of class components. For something like
 - useReducer (create redux like reduxe instead of using redux, dispatch action)
 - useRef...
 
-Those are the big hooks. The most
+Those are the big hooks. The most used ones.
 `Import {useState, useEffect} from 'react';`
 
 You can create custom Hooks.
@@ -51,7 +51,7 @@ You can create custom Hooks.
 
 Until now we had to pass a prop from a component to another to use it. If we have a very deep component and we want to use a function from there in the App Component, we had to pass the function all the way through all component (props drilling). With Context we can remove the state from the Component and put them into Context.
 
-We receive 3 different files:
+We create 3 different files:
 - githubContext.js
 - GithubState.js
 - githubReduces.js

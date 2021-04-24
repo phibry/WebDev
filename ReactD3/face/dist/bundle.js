@@ -7892,46 +7892,57 @@
 	}
 	});
 
-	const width = 960;
-	const height = 500;
-	const centerX = width / 2;
-	const centerY = height / 2;
-	const strokeWidth = 10;
-	const exeOffsetX = 90;
-	const eyeOffsetY = 100;
-	const eyeRadius = 50;
-	const mouthWidth = 20;
-	const mouthRadius = 130; // Create a SVG-Path
+	function styleInject(css, ref) {
+	  if (ref === void 0) ref = {};
+	  var insertAt = ref.insertAt;
 
-	const mouthArc = d3.arc().innerRadius(mouthRadius).outerRadius(mouthRadius + mouthWidth).startAngle(Math.PI / 2).endAngle(Math.PI * 3 / 2);
+	  if (!css || typeof document === 'undefined') {
+	    return;
+	  }
 
-	const App = () =>
-	/*#__PURE__*/
-	// Create a SVG
-	// Scaleable Vector Graphics
-	react.createElement("svg", {
-	  width: width,
-	  height: height
-	}, /*#__PURE__*/react.createElement("g", {
-	  transform: `translate(${centerX}, ${centerY})`
-	}, /*#__PURE__*/react.createElement("circle", {
-	  // cx={centerX}
-	  // cy={centerY}
-	  r: centerY - strokeWidth / 2,
-	  fill: "yellow",
-	  stroke: "black",
-	  strokeWidth: strokeWidth
-	}), /*#__PURE__*/react.createElement("circle", {
-	  cx: -exeOffsetX,
-	  cy: -eyeOffsetY,
-	  r: eyeRadius
-	}), /*#__PURE__*/react.createElement("circle", {
-	  cx: +exeOffsetX,
-	  cy: -eyeOffsetY,
-	  r: eyeRadius
-	}), /*#__PURE__*/react.createElement("path", {
-	  d: mouthArc()
-	})));
+	  var head = document.head || document.getElementsByTagName('head')[0];
+	  var style = document.createElement('style');
+	  style.type = 'text/css';
+
+	  if (insertAt === 'top') {
+	    if (head.firstChild) {
+	      head.insertBefore(style, head.firstChild);
+	    } else {
+	      head.appendChild(style);
+	    }
+	  } else {
+	    head.appendChild(style);
+	  }
+
+	  if (style.styleSheet) {
+	    style.styleSheet.cssText = css;
+	  } else {
+	    style.appendChild(document.createTextNode(css));
+	  }
+	}
+
+	var css_248z = "* {\n  margin: 0;\n  padding: 0;\n  overflow: hidden;\n}\n\nbody {\n  background: #333;\n}\n\npre {\n  font-size: 5em;\n}";
+	styleInject(css_248z);
+
+	const message = data => {
+	  let message = '';
+	  message += Math.round(d3.csvFormat(data).length / 1024) + ' kB\n';
+	  message += data.length + ' rows\n';
+	  message += data.columns.length + ' columns';
+	  return message;
+	};
+
+	const csvUrl = 'https://gist.githubusercontent.com/phibry/92ea033037a1e5470302a2978269bc05/raw/CSSNamedColors.csv'; // React Component
+
+	const App = () => {
+	  // State
+	  const [data, setdata] = react.useState(null);
+	  react.useEffect(() => {
+	    d3.csv(csvUrl).then(setdata);
+	  }, []); // empty array as dependencies for running the fetch one time
+
+	  return /*#__PURE__*/react.createElement("pre", null, data ? message(data) : 'Loading...');
+	};
 
 	const rootElement = document.getElementById('root');
 	reactDom.render( /*#__PURE__*/react.createElement(App, null), rootElement);

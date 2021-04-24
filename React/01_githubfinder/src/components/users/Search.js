@@ -15,8 +15,6 @@ const Search = () => {
     if (text === '') {
       alertContext.setAlert('Please enter something', 'light');
     } else {
-      // Take the submitted text, and search for this user via the github api
-      // With .props we send this to App.js
       githubContext.searchUsers(text);
       setText('');
     }
@@ -46,7 +44,6 @@ const Search = () => {
       {githubContext.users.length > 0 && (
         <button
           className="btn btn-light btn-block"
-          // With .props we send this to App.js
           onClick={githubContext.clearUsers}
         >
           Clear

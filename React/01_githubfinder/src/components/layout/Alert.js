@@ -7,6 +7,8 @@ const Alert = () => {
   // Destructure
   const { alert } = alertContext;
 
+  console.log(alert);
+
   return (
     alert !== null && (
       <div className={`alert alert-${alert.type}`}>

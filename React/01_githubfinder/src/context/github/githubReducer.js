@@ -1,7 +1,6 @@
 // What happens to a state when calling an action
 import {
   SEARCH_USERS,
-  SET_ALERT,
   CLEAR_USERS,
   GET_USER,
   GET_REPOS,
@@ -10,7 +9,7 @@ import {
 
 // State is immutable, we can't reassign is
 // with ... we can copy everything inside state
-export default (state, action) => {
+const GithubReducer = (state, action) => {
   switch (action.type) {
     case SEARCH_USERS:
       return {
@@ -50,3 +49,5 @@ export default (state, action) => {
       return state;
   }
 };
+
+export default GithubReducer;
